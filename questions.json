@@ -1,0 +1,56 @@
+{
+    "quiz1": [
+        {
+    "vraag": "example1",
+    "opties": ["A: answer", "B: answer", "C: answer", "D: answer"],
+    "antwoord": 0
+},
+{
+    "vraag": "example1",
+    "opties": ["A: answer", "B: answer", "C: answer", "answer"],
+    "antwoord": 1
+},
+{
+    "vraag": "exmaple3",
+    "opties": ["A: answer", "B: answer", "C: answer", "D: Voegt een element toe"],
+    "antwoord": 1
+}
+    ],
+
+
+    "quiz2": [
+        {
+    "vraag": "Welke programmeertaal wordt vaak gebruikt voor het bouwen van websites?",
+    "opties": ["A: Python", "B: JavaScript", "C: C#", "D: Java"],
+    "antwoord": 1
+},
+{
+    "vraag": "Wat betekent HTML?",
+    "opties": ["A: HyperText Markup Language", "B: High Tech Machine Learning", "C: Home Tool Markup Language", "D: Hyperlink Text Management Language"],
+    "antwoord": 0
+},
+{
+    "vraag": "Welke tag gebruik je in HTML om een link te maken?",
+    "opties": ["A: <img>", "B: <a>", "C: <link>", "D: <href>"],
+    "antwoord": 1
+}
+    ],
+
+        "quiz3": [
+        {
+    "vraag": "Uit welk land komt Sushi oorspronkelijk?",
+    "opties": ["A: China", "B: Japan", "C: Thailand", "D: Korea"],
+    "antwoord": 1
+},
+{
+    "vraag": "Wat is het hoofdingrediënt van hummus?",
+    "opties": ["A: Tomaat", "B: Aardappel", "C: Kikkererwten", "D: Rijst"],
+    "antwoord": 2
+},
+{
+    "vraag": "Welke kaas is typisch Nederlands?",
+    "opties": ["A: Brie", "B: Gouda", "C: Feta", "D: Cheddar"],
+    "antwoord": 1
+}
+    ]
+}
