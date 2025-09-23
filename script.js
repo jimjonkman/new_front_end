@@ -37,3 +37,13 @@ function goToQuiz3() {
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page5').classList.remove('hidden');
 }
+
+fetch('/questions.json')
+  .then(response => Response.json())
+  .then(data => {
+    const question = data.quiz[0].vraag;
+    document.getElementById('questionText').textContent = question;
+  })
+  .catch(error => {
+    console.error('Error loading question: ', error);
+  });

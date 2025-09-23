@@ -1,5 +1,5 @@
 {
-    "quiz1": [
+    "quiz": [
         {
     "vraag": "example1",
     "opties": ["A: answer", "B: answer", "C: answer", "D: answer"],
