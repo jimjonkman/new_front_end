@@ -82,29 +82,29 @@ function goToQuiz3() {
 //     console.error('Error loading question: ', error);
 //   });
 
-function loadQuizQuestion(index = 0) {
-  fetch('/questions.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Kan JSON niet laden');
-    }
-    return response.json();
-  })
-  .then(data => {
-    const vraag = data.quiz[index.vraag];
-    const opties = data.quiz[index].opties;
+// function loadQuizQuestion(index = 0) {
+//   fetch('/questions.json')
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Kan JSON niet laden');
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     const vraag = data.quiz[index.vraag];
+//     const opties = data.quiz[index].opties;
 
-    document.getElementById('questionText').textContent = vraag;
-    document.getElementById('answer1').textContent = opties[0];
-    document.getElementById('answer2').textContent = opties[1];
-    document.getElementById('answer3').textContent = opties[2];
-    document.getElementById('answer3').textContent = opties[3];
-    document.getElementById('answer4').textContent = opties[4];
-  })
-  .catch(error => {
-    console.error('Fout bij het laden van de quiz: ', error);
-  })
-}
+//     document.getElementById('questionText').textContent = vraag;
+//     document.getElementById('answer1').textContent = opties[0];
+//     document.getElementById('answer2').textContent = opties[1];
+//     document.getElementById('answer3').textContent = opties[2];
+//     document.getElementById('answer3').textContent = opties[3];
+//     document.getElementById('answer4').textContent = opties[4];
+//   })
+//   .catch(error => {
+//     console.error('Fout bij het laden van de quiz: ', error);
+//   })
+// }
 function goToWelcomePage() {
   stopTimer();
   // Verberg alle pagina's behalve page1
@@ -119,3 +119,5 @@ document.getElementById('saveName').addEventListener('keydown', function(e) {
     goToThemePage();
   }
 });
+
+fetch 
