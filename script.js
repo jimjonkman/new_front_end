@@ -99,6 +99,7 @@ function loadQuizQuestion(index = 0) {
     document.getElementById('answer2').textContent = opties[1];
     document.getElementById('answer3').textContent = opties[2];
     document.getElementById('answer3').textContent = opties[3];
+    document.getElementById('answer4').textContent = opties[4];
   })
   .catch(error => {
     console.error('Fout bij het laden van de quiz: ', error);
