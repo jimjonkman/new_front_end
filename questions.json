@@ -1,56 +1,158 @@
 {
-    "quiz": [
-        {
-    "vraag": "example1",
-    "opties": ["A: answer", "B: answer", "C: answer", "D: answer"],
-    "antwoord": 0
-},
-{
-    "vraag": "example1",
-    "opties": ["A: answer", "B: answer", "C: answer", "answer"],
-    "antwoord": 1
-},
-{
-    "vraag": "exmaple3",
-    "opties": ["A: answer", "B: answer", "C: answer", "D: Voegt een element toe"],
-    "antwoord": 1
-}
-    ],
-
-
-    "quiz2": [
-        {
-    "vraag": "Welke programmeertaal wordt vaak gebruikt voor het bouwen van websites?",
-    "opties": ["A: Python", "B: JavaScript", "C: C#", "D: Java"],
-    "antwoord": 1
-},
-{
-    "vraag": "Wat betekent HTML?",
-    "opties": ["A: HyperText Markup Language", "B: High Tech Machine Learning", "C: Home Tool Markup Language", "D: Hyperlink Text Management Language"],
-    "antwoord": 0
-},
-{
-    "vraag": "Welke tag gebruik je in HTML om een link te maken?",
-    "opties": ["A: <img>", "B: <a>", "C: <link>", "D: <href>"],
-    "antwoord": 1
-}
-    ],
-
-        "quiz3": [
-        {
-    "vraag": "Uit welk land komt Sushi oorspronkelijk?",
-    "opties": ["A: China", "B: Japan", "C: Thailand", "D: Korea"],
-    "antwoord": 1
-},
-{
-    "vraag": "Wat is het hoofdingrediënt van hummus?",
-    "opties": ["A: Tomaat", "B: Aardappel", "C: Kikkererwten", "D: Rijst"],
-    "antwoord": 2
-},
-{
-    "vraag": "Welke kaas is typisch Nederlands?",
-    "opties": ["A: Brie", "B: Gouda", "C: Feta", "D: Cheddar"],
-    "antwoord": 1
-}
-    ]
+  "quiz": [
+    {
+      "vraag": "Wat betekent HTML?",
+      "opties": ["A: Hyper Trainer Markup Language", "B: Hyper Text Markup Language", "C: Hyper Text Markdown Language", "D: Home Tool Markup Language"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke van deze is GEEN programmeertaal?",
+      "opties": ["A: Python", "B: Java", "C: HTML", "D: C++"],
+      "antwoord": 2
+    },
+    {
+      "vraag": "Wat betekent CSS?",
+      "opties": ["A: Computer Style Sheets", "B: Creative Style System", "C: Cascading Style Sheets", "D: Colorful Style Sheets"],
+      "antwoord": 2
+    },
+    {
+      "vraag": "Welke HTML-tag gebruik je voor een afbeelding?",
+      "opties": ["A: <img>", "B: <picture>", "C: <src>", "D: <image>"],
+      "antwoord": 0
+    },
+    {
+      "vraag": "Met welk attribuut geef je een element een unieke naam in HTML?",
+      "opties": ["A: class", "B: id", "C: name", "D: ref"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke van deze is een backend-taal?",
+      "opties": ["A: JavaScript", "B: PHP", "C: CSS", "D: HTML"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Wat is de uitkomst van 2 + 2 * 2 in de meeste programmeertalen?",
+      "opties": ["A: 6", "B: 8", "C: 12", "D: 16"],
+      "antwoord": 0
+    },
+    {
+      "vraag": "Welke programmeertaal wordt vaak gebruikt voor data-analyse?",
+      "opties": ["A: Python", "B: Java", "C: C#", "D: PHP"],
+      "antwoord": 0
+    },
+    {
+      "vraag": "Wat is een array?",
+      "opties": ["A: Een soort loop", "B: Een verzameling van waarden", "C: Een functie", "D: Een variabele"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke van deze hoort bij objectgeoriënteerd programmeren?",
+      "opties": ["A: for-loop", "B: class", "C: if-statement", "D: array"],
+      "antwoord": 1
+    }
+  ],
+  "quiz2": [
+    {
+      "vraag": "Hoeveel spelers staan er bij het begin van een voetbalwedstrijd op het veld (totaal)?",
+      "opties": ["A: 20", "B: 22", "C: 24", "D: 18"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke sport wordt gespeeld op Wimbledon?",
+      "opties": ["A: Voetbal", "B: Tennis", "C: Rugby", "D: Basketbal"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Hoeveel punten is een touchdown waard in American Football?",
+      "opties": ["A: 3", "B: 6", "C: 7", "D: 1"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke kleur heeft de gele trui in de Tour de France?",
+      "opties": ["A: Groen", "B: Geel", "C: Rood", "D: Blauw"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "In welke sport kun je een 'hole-in-one' scoren?",
+      "opties": ["A: Golf", "B: Tennis", "C: Basketbal", "D: Honkbal"],
+      "antwoord": 0
+    },
+    {
+      "vraag": "Hoeveel ringen staan er op de Olympische vlag?",
+      "opties": ["A: 4", "B: 5", "C: 6", "D: 7"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke sport wordt gespeeld met een shuttle?",
+      "opties": ["A: Badminton", "B: Volleybal", "C: Squash", "D: Tafeltennis"],
+      "antwoord": 0
+    },
+    {
+      "vraag": "Wie is de bekendste basketballer aller tijden?",
+      "opties": ["A: Lionel Messi", "B: Michael Jordan", "C: Roger Federer", "D: Max Verstappen"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke sport wordt ook wel 'de koning van de sporten' genoemd?",
+      "opties": ["A: Voetbal", "B: Tennis", "C: Atletiek", "D: Zwemmen"],
+      "antwoord": 0
+    },
+    {
+      "vraag": "Hoeveel sets moet je winnen om een Grand Slam tennistoernooi te winnen (heren)?",
+      "opties": ["A: 2", "B: 3", "C: 4", "D: 5"],
+      "antwoord": 1
+    }
+  ],
+  "quiz3": [
+    {
+      "vraag": "Uit welk land komt sushi oorspronkelijk?",
+      "opties": ["A: China", "B: Japan", "C: Korea", "D: Thailand"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Wat is het hoofdingrediënt van hummus?",
+      "opties": ["A: Linzen", "B: Kikkererwten", "C: Rijst", "D: Aardappel"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke kaas is typisch Nederlands?",
+      "opties": ["A: Cheddar", "B: Brie", "C: Gouda", "D: Feta"],
+      "antwoord": 2
+    },
+    {
+      "vraag": "Wat is een typisch Frans dessert?",
+      "opties": ["A: Tiramisu", "B: Crème brûlée", "C: Baklava", "D: Stroopwafel"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welk land staat bekend om pizza?",
+      "opties": ["A: Spanje", "B: Italië", "C: Frankrijk", "D: Duitsland"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Wat is de hoofdsmaak van drop?",
+      "opties": ["A: Zoet", "B: Zout", "C: Bitter", "D: Umami"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Wat is de nationale drank van Engeland?",
+      "opties": ["A: Bier", "B: Wijn", "C: Thee", "D: Koffie"],
+      "antwoord": 2
+    },
+    {
+      "vraag": "Wat is een veelgebruikt kruid in pesto?",
+      "opties": ["A: Peterselie", "B: Basilicum", "C: Koriander", "D: Dille"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Wat is de hoofdingrediënt van guacamole?",
+      "opties": ["A: Tomaat", "B: Avocado", "C: Ui", "D: Paprika"],
+      "antwoord": 1
+    },
+    {
+      "vraag": "Welke groente is oranje?",
+      "opties": ["A: Komkommer", "B: Wortel", "C: Paprika", "D: Courgette"],
+      "antwoord": 1
+    }
+  ]
 }
