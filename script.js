@@ -72,12 +72,35 @@ function goToQuiz3() {
   document.getElementById('page5').classList.remove('hidden');
 }
 
-fetch('/questions.json')
-  .then(response => Response.json())
+// fetch('/questions.json')
+//   .then(response => Response.json())
+//   .then(data => {
+//     const question = data.quiz[0].vraag;
+//     document.getElementById('questionText').textContent = question;
+//   })
+//   .catch(error => {
+//     console.error('Error loading question: ', error);
+//   });
+
+function loadQuizQuestion(index = 0) {
+  fetch('/questions.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Kan JSON niet laden');
+    }
+    return response.json();
+  })
   .then(data => {
-    const question = data.quiz[0].vraag;
-    document.getElementById('questionText').textContent = question;
+    const vraag = data.quiz[index.vraag];
+    const opties = data.quiz[index].opties;
+
+    document.getElementById('questionText').textContent = vraag;
+    document.getElementById('answer1').textContent = opties[0];
+    document.getElementById('answer2').textContent = opties[1];
+    document.getElementById('answer3').textContent = opties[2];
+    document.getElementById('answer3').textContent = opties[3];
   })
   .catch(error => {
-    console.error('Error loading question: ', error);
-  });
+    console.error('Fout bij het laden van de quiz: ', error);
+  })
+}
