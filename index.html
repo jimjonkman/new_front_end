@@ -1,57 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz App</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
-    <nav class="w-full h-16 bg-blue-600 fixed top-0"></nav>
- <div id="page1" class="flex flex-col items-center space-y-4">
+  <nav class="w-full h-16 bg-blue-600 fixed top-0"></nav>
+  <nav class="w-full h-16 bg-blue-600 fixed top-0 flex items-center px-4">
+    <button onclick="goToWelcomePage()"
+      class="bg-white text-blue-600 font-semibold px-4 py-2 rounded hover:bg-blue-100 transition"
+      style="margin-left: 8px;">
+      Homepagina
+    </button>
+  </nav>
+  <div id="page1" class="flex flex-col items-center space-y-4">
     <h1 class="text-3xl font-bold mb-4 text-blue-600">Welkom</h1>
-  <p class="w-96">Dit is een quiz over verschillende dingen, nadat je je naam hebt ingevoerd kan je kiezen uit quizes. hierna begint de gekozen quiz.</p>
-  <input
-  id="saveName" class="border border-gray-300 rounded px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text"
-    placeholder="Voer je naam in"
-  />
-  <button onclick="goToThemePage()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">submit</button>
-</div>
+    <p class="w-96">Dit is een quiz over verschillende dingen, nadat je je naam hebt ingevoerd kan je kiezen uit quizes.
+      hierna begint de gekozen quiz.</p>
+    <input id="saveName"
+      class="border border-gray-300 rounded px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      type="text" placeholder="Voer je naam in" />
+    <button onclick="goToThemePage()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">submit</button>
+  </div>
 
-<div id="page2" class="hidden flex flex-col items-center space-y-4">
-<h2 class="text-2xl font-semibold text-blue-600">Kies een quiz&nbsp;<span id="userName" class="text-2xl font-semibold text-blue-600"></h2>
-<button id="quiz1" onclick="goToQuiz1()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">quiz 1</button>
-<button id="quiz2" onclick="goToQuiz2()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">quiz 2</button>
-<button id="quiz3" onclick="goToQuiz3()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">quiz 3</button>
-<button id="quiz3" onclick="goToQuiz4()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leaderboard</button>
-</div>
+  <div id="page2" class="hidden flex flex-col items-center space-y-4">
+    <h2 class="text-2xl font-semibold text-blue-600">Kies een quiz&nbsp;<span id="userName"
+        class="text-2xl font-semibold text-blue-600"></h2>
+    <button id="quiz1" onclick="goToQuiz1()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">quiz
+      1</button>
+    <button id="quiz2" onclick="goToQuiz2()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">quiz
+      2</button>
+    <button id="quiz3" onclick="goToQuiz3()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">quiz
+      3</button>
+    <button id="quiz3" onclick="goToQuiz4()"
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leaderboard</button>
+  </div>
 
-<div id="page3" class="hidden flex flex-col items-center space-y-4">
+  <div id="page3" class="hidden flex flex-col items-center space-y-4">
     <div id="timer3" class="text-xl font-bold text-red-600"></div>
     <h2 id="questionText" class="text-2xl font-semibold text-blue-600"></h2>
-    <button id="answer1"  class="bg-green-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-green-600">answer 1</button>
-    <button id="answer2"  class="bg-red-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-red-600">answer 2</button>
-    <button id="answer3"  class="bg-blue-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-blue-600">answer 3</button>
-    <button id="answer4"  class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">answer 4</button>
-</div>
+    <button id="answer1" class="bg-green-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-green-600">answer
+      1</button>
+    <button id="answer2" class="bg-red-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-red-600">answer 2</button>
+    <button id="answer3" class="bg-blue-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-blue-600">answer 3</button>
+    <button id="answer4" class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">answer
+      4</button>
+  </div>
 
-<div id="page4" class="hidden flex flex-col items-center space-y-4">    
+  <div id="page4" class="hidden flex flex-col items-center space-y-4">
     <div id="timer4" class="text-xl font-bold text-red-600"></div>
     <h2>dit is een voorbeeld vraag</h2>
-    <button id="answer1"  class="bg-green-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-green-600">quiz 1</button>
-    <button id="answer2"  class="bg-red-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-red-600">quiz 2</button>
-    <button id="answer3"  class="bg-blue-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-blue-600">quiz 3</button>
-    <button id="answer4"  class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">quiz 3</button>
-</div>
+    <button id="answer1" class="bg-green-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-green-600">quiz 1</button>
+    <button id="answer2" class="bg-red-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-red-600">quiz 2</button>
+    <button id="answer3" class="bg-blue-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-blue-600">quiz 3</button>
+    <button id="answer4" class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">quiz
+      3</button>
+  </div>
 
-<div id="page5" class="hidden flex flex-col items-center space-y-4">
+  <div id="page5" class="hidden flex flex-col items-center space-y-4">
     <div id="timer5" class="text-xl font-bold text-red-600"></div>
     <h2>dit is een voorbeeld vraag</h2>
-    <button id="answer1"  class="bg-green-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-green-600">quiz 1</button>
-    <button id="answer2"  class="bg-red-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-red-600">quiz 2</button>
-    <button id="answer3"  class="bg-blue-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-blue-600">quiz 3</button>
-    <button id="answer4"  class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">quiz 3</button>
-</div>
+    <button id="answer1" class="bg-green-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-green-600">quiz 1</button>
+    <button id="answer2" class="bg-red-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-red-600">quiz 2</button>
+    <button id="answer3" class="bg-blue-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-blue-600">quiz 3</button>
+    <button id="answer4" class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">quiz
+      3</button>
+  </div>
 </body>
 <script src="/script.js"></script>
+
 </html>
