@@ -114,3 +114,8 @@ function goToWelcomePage() {
   document.getElementById('page4').classList.add('hidden');
   document.getElementById('page5').classList.add('hidden');
 }
+document.getElementById('saveName').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    goToThemePage();
+  }
+});
