@@ -105,3 +105,12 @@ function loadQuizQuestion(index = 0) {
     console.error('Fout bij het laden van de quiz: ', error);
   })
 }
+function goToWelcomePage() {
+  stopTimer();
+  // Verberg alle pagina's behalve page1
+  document.getElementById('page1').classList.remove('hidden');
+  document.getElementById('page2').classList.add('hidden');
+  document.getElementById('page3').classList.add('hidden');
+  document.getElementById('page4').classList.add('hidden');
+  document.getElementById('page5').classList.add('hidden');
+}
