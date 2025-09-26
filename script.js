@@ -2,6 +2,10 @@ let timerInterval;
 let currentQuestion = 0;
 let score = 0;
 let allQuestions = {};
+let userAnswers = [];
+let currentQuiz = "";
+let currentPageId = "";
+let currentTimerId = "";
 
 // Laad de JSON met alle quizvragen
 fetch('questions.json')
@@ -31,30 +35,35 @@ function startTimer(duration, displayId, onTimeUp) {
 function stopTimer() {
   clearInterval(timerInterval);
 }
-// ...boven je showQuestion functie...
 
 function showQuestion(quizName, pageId, timerId) {
   const questions = allQuestions[quizName];
   if (!questions || currentQuestion >= questions.length) {
-    alert(`Quiz klaar! Je score: ${score}/${questions ? questions.length : 0}`);
-    goToWelcomePage();
+    showResults(quizName, questions);
     return;
   }
   const vraagObj = questions[currentQuestion];
-  // Zoek de juiste h2 binnen de pagina
   const page = document.getElementById(pageId);
   const h2 = page.querySelector('h2');
   h2.textContent = vraagObj.vraag;
-  // Zoek alleen de knoppen binnen de juiste pagina!
   const btns = page.querySelectorAll('button[id^="answer"]');
+  btns.forEach(btn => {
+    btn.disabled = false;
+    btn.style.opacity = 1;
+  });
   vraagObj.opties.forEach((optie, i) => {
     const btn = btns[i];
     btn.textContent = optie;
-    btn.disabled = false;
-    btn.style.opacity = 1;
     btn.onclick = () => {
       stopTimer();
-      if (i === vraagObj.antwoord) score++;
+      const juist = i === vraagObj.antwoord;
+      if (juist) score++;
+      userAnswers.push({
+        vraag: vraagObj.vraag,
+        gegeven: optie,
+        juist: juist,
+        correctAntwoord: vraagObj.opties[vraagObj.antwoord]
+      });
       currentQuestion++;
       showQuestion(quizName, pageId, timerId);
     };
@@ -66,10 +75,17 @@ function showQuestion(quizName, pageId, timerId) {
     btns[i].style.opacity = 0.5;
   }
   startTimer(15, timerId, () => {
+    // Tijd is op, knoppen uitschakelen
     for (let i = 0; i < btns.length; i++) {
       btns[i].disabled = true;
       btns[i].style.opacity = 0.5;
     }
+    userAnswers.push({
+      vraag: vraagObj.vraag,
+      gegeven: "Geen antwoord",
+      juist: false,
+      correctAntwoord: vraagObj.opties[vraagObj.antwoord]
+    });
     setTimeout(() => {
       currentQuestion++;
       showQuestion(quizName, pageId, timerId);
@@ -77,7 +93,28 @@ function showQuestion(quizName, pageId, timerId) {
   });
 }
 
-// Pagina navigatie functies
+function showResults(quizName, questions) {
+  // Verberg quizpagina's
+  document.getElementById('page3').classList.add('hidden');
+  document.getElementById('page4').classList.add('hidden');
+  document.getElementById('page5').classList.add('hidden');
+  // Toon resultatenpagina
+  document.getElementById('resultPage').classList.remove('hidden');
+  document.getElementById('scoreText').textContent = `Je score: ${score} / ${questions.length}`;
+  const resultsList = document.getElementById('resultsList');
+  resultsList.innerHTML = "";
+  userAnswers.forEach((antwoord, idx) => {
+    const li = document.createElement('li');
+    li.className = "mb-2";
+    li.innerHTML = `<strong>Vraag ${idx + 1}:</strong> ${antwoord.vraag}<br>
+      <span style="color:${antwoord.juist ? 'green' : 'red'}">
+        Jouw antwoord: ${antwoord.gegeven}
+        ${antwoord.juist ? '✔️' : `❌ (Correct: ${antwoord.correctAntwoord})`}
+      </span>`;
+    resultsList.appendChild(li);
+  });
+}
+
 function goToThemePage() {
   const name = document.getElementById('saveName').value.trim();
   if (name === "") {
@@ -93,30 +130,45 @@ function goToQuiz1() {
   stopTimer();
   score = 0;
   currentQuestion = 0;
+  userAnswers = [];
+  currentQuiz = "quiz";
+  currentPageId = "page3";
+  currentTimerId = "timer3";
   document.getElementById('userName').textContent = document.getElementById('saveName').value.trim();
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page3').classList.remove('hidden');
-  showQuestion("quiz", "page3", "timer3");
+  document.getElementById('resultPage').classList.add('hidden');
+  showQuestion(currentQuiz, currentPageId, currentTimerId);
 }
 
 function goToQuiz2() {
   stopTimer();
   score = 0;
   currentQuestion = 0;
+  userAnswers = [];
+  currentQuiz = "quiz2";
+  currentPageId = "page4";
+  currentTimerId = "timer4";
   document.getElementById('userName').textContent = document.getElementById('saveName').value.trim();
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page4').classList.remove('hidden');
-  showQuestion("quiz2", "page4", "timer4");
+  document.getElementById('resultPage').classList.add('hidden');
+  showQuestion(currentQuiz, currentPageId, currentTimerId);
 }
 
 function goToQuiz3() {
   stopTimer();
   score = 0;
   currentQuestion = 0;
+  userAnswers = [];
+  currentQuiz = "quiz3";
+  currentPageId = "page5";
+  currentTimerId = "timer5";
   document.getElementById('userName').textContent = document.getElementById('saveName').value.trim();
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page5').classList.remove('hidden');
-  showQuestion("quiz3", "page5", "timer5");
+  document.getElementById('resultPage').classList.add('hidden');
+  showQuestion(currentQuiz, currentPageId, currentTimerId);
 }
 
 function goToWelcomePage() {
@@ -126,6 +178,7 @@ function goToWelcomePage() {
   document.getElementById('page3').classList.add('hidden');
   document.getElementById('page4').classList.add('hidden');
   document.getElementById('page5').classList.add('hidden');
+  document.getElementById('resultPage').classList.add('hidden');
 }
 
 // Enter op naamveld = submit

@@ -30,9 +30,12 @@
   <div id="page2" class="hidden flex flex-col items-center space-y-4">
     <h2 class="text-2xl font-semibold text-blue-600">Kies een quiz&nbsp;<span id="userName"
         class="text-2xl font-semibold text-blue-600"></h2>
-    <button id="quiz1" onclick="goToQuiz1()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">ICT</button>
-    <button id="quiz2" onclick="goToQuiz2()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Sport</button>
-    <button id="quiz3" onclick="goToQuiz3()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Eten & Drinken</button>
+    <button id="quiz1" onclick="goToQuiz1()"
+      class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">ICT</button>
+    <button id="quiz2" onclick="goToQuiz2()"
+      class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Sport</button>
+    <button id="quiz3" onclick="goToQuiz3()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Eten &
+      Drinken</button>
     <button id="quiz3" onclick="goToQuiz4()"
       class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Leaderboard</button>
   </div>
@@ -69,6 +72,13 @@
     <button id="answer4" class="bg-yellow-500 text-white text-xl px-8 py-4 rounded-lg hover:bg-yellow-600">answer
       4</button>
   </div>
+  </div>
+  <div id="resultPage" class="hidden flex flex-col items-center space-y-4">
+    <h2 class="text-2xl font-bold text-blue-600">Resultaten</h2>
+    <div id="scoreText" class="text-xl"></div>
+    <ul id="resultsList" class="w-full max-w-xl"></ul>
+    <button onclick="goToWelcomePage()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Terug naar
+      start</button>
   </div>
 </body>
 <script src="/script.js"></script>
