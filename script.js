@@ -186,4 +186,7 @@ document.getElementById('saveName').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') {
     goToThemePage();
   }
+
+fetch 
 });
+
