@@ -94,11 +94,9 @@ function showQuestion(quizName, pageId, timerId) {
 }
 
 function showResults(quizName, questions) {
-  // Verberg quizpagina's
   document.getElementById('page3').classList.add('hidden');
   document.getElementById('page4').classList.add('hidden');
   document.getElementById('page5').classList.add('hidden');
-  // Toon resultatenpagina
   document.getElementById('resultPage').classList.remove('hidden');
   document.getElementById('scoreText').textContent = `Je score: ${score} / ${questions.length}`;
   const resultsList = document.getElementById('resultsList');
