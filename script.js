@@ -94,11 +94,18 @@ function showQuestion(quizName, pageId, timerId) {
 }
 
 function showResults(quizName, questions) {
+  // Hide quiz pages
   document.getElementById('page3').classList.add('hidden');
   document.getElementById('page4').classList.add('hidden');
   document.getElementById('page5').classList.add('hidden');
+
+  // Show result page
   document.getElementById('resultPage').classList.remove('hidden');
+
+  // Display score
   document.getElementById('scoreText').textContent = `Je score: ${score} / ${questions.length}`;
+
+  // Render detailed answer review
   const resultsList = document.getElementById('resultsList');
   resultsList.innerHTML = "";
   userAnswers.forEach((antwoord, idx) => {
@@ -111,7 +118,17 @@ function showResults(quizName, questions) {
       </span>`;
     resultsList.appendChild(li);
   });
+
+  // Save score to leaderboard
+  const name = document.getElementById('saveName').value.trim();
+  if (name !== "") {
+    saveToLeaderboard(name, score);
+  }
+
+  // Render leaderboard
+  renderLeaderboard();
 }
+
 
 function goToThemePage() {
   const name = document.getElementById('saveName').value.trim();
@@ -188,3 +205,29 @@ document.getElementById('saveName').addEventListener('keydown', function(e) {
 fetch 
 });
 
+function saveToLeaderboard(name, score) {
+  const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+  leaderboard.push({ name, score });
+  leaderboard.sort((a, b) => b.score - a.score); // Highest score first
+  leaderboard.splice(10); // Keep top 10
+  localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+}
+
+function renderLeaderboard() {
+  const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+  const list = document.getElementById('leaderboardList');
+  list.innerHTML = "";
+
+  leaderboard.forEach((entry, index) => {
+    const li = document.createElement('li');
+    li.className = "flex justify-between bg-white px-4 py-2 rounded shadow-sm hover:bg-gray-100";
+    li.innerHTML = `<span class="font-medium">${index + 1}. ${entry.name}</span>
+                    <span class="text-blue-600 font-bold">${entry.score}</span>`;
+    list.appendChild(li);
+  });
+}
+
+function clearLeaderboard() {
+  localStorage.removeItem('leaderboard');
+  renderLeaderboard();
+}
