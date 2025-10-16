@@ -149,6 +149,9 @@ function goToQuiz1() {
   currentQuiz = "quiz";
   currentPageId = "page3";
   currentTimerId = "timer3";
+
+  updatePlayerNameDisplay();
+  
   document.getElementById('userName').textContent = document.getElementById('saveName').value.trim();
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page3').classList.remove('hidden');
@@ -164,6 +167,9 @@ function goToQuiz2() {
   currentQuiz = "quiz2";
   currentPageId = "page4";
   currentTimerId = "timer4";
+
+  updatePlayerNameDisplay();
+  
   document.getElementById('userName').textContent = document.getElementById('saveName').value.trim();
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page4').classList.remove('hidden');
@@ -179,6 +185,9 @@ function goToQuiz3() {
   currentQuiz = "quiz3";
   currentPageId = "page5";
   currentTimerId = "timer5";
+
+  updatePlayerNameDisplay();
+
   document.getElementById('userName').textContent = document.getElementById('saveName').value.trim();
   document.getElementById('page2').classList.add('hidden');
   document.getElementById('page5').classList.remove('hidden');
@@ -230,4 +239,13 @@ function renderLeaderboard() {
 function clearLeaderboard() {
   localStorage.removeItem('leaderboard');
   renderLeaderboard();
+}
+
+function updatePlayerNameDisplay() {
+  const name = document.getElementById('saveName').value.trim();
+  document.getElementById('userName').textContent = name;
+  const playerNameEl = document.getElementById('playerName');
+  if (playerNameEl) {
+    playerNameEl.innerHTML = `Speler: <span class="font-semibold">${name}</span>`;
+  }
 }
